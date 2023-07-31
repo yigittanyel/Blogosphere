@@ -1,0 +1,25 @@
+<form class="example-form" [formGroup]="cardForm">
+    <h2 style="text-align: center; font-weight: bold;margin:10px;" >{{data ? "Edit Blog" :"Add Blog"}}</h2>
+    <mat-form-field class="example-full-width">
+      <mat-label>Title</mat-label>
+      <input matInput placeholder="Title" formControlName="title" required>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Summary</mat-label>
+        <input matInput placeholder="Summary" formControlName="summary" required>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label class="content">Content</mat-label>
+        <textarea matInput placeholder="Content" formControlName="content" required> </textarea>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Image Url</mat-label>
+        <input matInput placeholder="Image Url" formControlName="smallImageUrl">
+      </mat-form-field>
+
+
+      <mat-dialog-actions align="end">
+        <button mat-raised-button mat-dialog-close color="warn">Cancel</button>
+        <button mat-raised-button color="primary" (click)="data ? updateBlog() : addBlog()" [disabled]="!cardForm.valid">{{data? "Edit" : "Add"}}</button>
+      </mat-dialog-actions>
+  </form>

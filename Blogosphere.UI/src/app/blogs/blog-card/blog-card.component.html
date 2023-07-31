@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="container-rel">
+        <div class="row">
+          </div>
+            <div class="add-blog-button-container">
+              <button mat-raised-button style="background-color: lightgray" (click)="OpenAddBlogModal()">Add New Blog</button>
+          </div>
+      </div>
+      <br><br><br>
+    <div class="row">
+      <div *ngFor="let blog of blogService.blogs" class="col-md-3">
+        <div class="example-card">
+          <mat-card-header>
+            <mat-card-title>{{ blog.title }}</mat-card-title>
+          </mat-card-header><hr>
+          <img mat-card-image [src]="blog.smallImageUrl">
+          <mat-card-content>
+            <p>{{ blog.summary }}</p>
+          </mat-card-content>
+          <div class="action-buttons">
+            <button mat-icon-button class="edit-button" (click)="OpenUpdateBlogModal(blog)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button class="delete-button" (click)="OpenDeleteBlogModal(blog)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>    
+  </div>
+  

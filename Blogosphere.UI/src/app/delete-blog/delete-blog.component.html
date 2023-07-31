@@ -1,0 +1,12 @@
+<h2 class="text-center">Are you sure you want to delete this blog?</h2>
+<div class="container">
+    <h3><b>Title: </b> {{data.title}}</h3><hr>
+    <h3><b>Content :</b> {{data.content}}</h3><hr>
+    <h3><b>Summary: </b>{{data.summary}}</h3><hr>
+</div>
+
+<mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close color="primary">Cancel</button>
+    <button mat-raised-button color="warn" (click)="deleteBlog()">Delete</button>
+</mat-dialog-actions>
+
